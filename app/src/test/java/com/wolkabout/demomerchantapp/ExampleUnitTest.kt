@@ -1,4 +1,4 @@
-package com.hobosoft.demoapp
+package com.wolkabout.demomerchantapp
 
 import org.junit.Test
 
