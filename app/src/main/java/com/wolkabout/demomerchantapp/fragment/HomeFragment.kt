@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.wolkabout.demomerchantapp.MainViewModel
-import com.wolkabout.demomerchantapp.databinding.FragmentListBinding
+import com.wolkabout.demomerchantapp.databinding.FragmentHomeBinding
 import com.wolkabout.demomerchantapp.model.Result
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ListFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var _binding: FragmentListBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: MainViewModel by activityViewModels()
@@ -25,7 +25,7 @@ class ListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentListBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

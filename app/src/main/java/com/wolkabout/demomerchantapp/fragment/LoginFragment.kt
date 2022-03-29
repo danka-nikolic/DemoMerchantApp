@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.wolkabout.demomerchantapp.databinding.FragmentMainBinding
+import com.wolkabout.demomerchantapp.databinding.FragmentLoginBinding
 
-class MainFragment: Fragment() {
+class LoginFragment: Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class MainFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -26,8 +26,8 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.centerButton.setOnClickListener {
-            val actionMainFragmentToListFragment = MainFragmentDirections.actionMainFragmentToListFragment("rs")
+        binding.loginButton.setOnClickListener {
+            val actionMainFragmentToListFragment = LoginFragmentDirections.actionLoginFragmentToHomeFragment("rs")
             findNavController().navigate(actionMainFragmentToListFragment)
         }
     }
@@ -36,8 +36,5 @@ class MainFragment: Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
-
 
 }
