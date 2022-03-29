@@ -38,8 +38,52 @@ android {
         flavorDimensions "environment"
 
         productFlavors {
-            development {
-                buildConfigField "String", "BASE_URL", "\"http://192.168.0.14:8080\""
+//            development {
+//                buildConfigField "String", "BASE_URL", "\"http://192.168.0.14:8080\""
+//            }
+            mirror {
+                // Mirror version code should always be lower by 1 than production
+                versionCode 2970 // even numbers
+                versionName "2.9.70"
+
+                def developmentAddress = "mirrorapi.ready2wash.net"
+                buildConfigField 'String', 'API_HOST', "\"$developmentAddress\""
+                buildConfigField 'String', 'SERVER_URL', "\"https://$developmentAddress/api\""
+                buildConfigField 'String', 'TERMS_URL', "\"https://$developmentAddress/api/termsAndConditions/document?countryIsoCode=%s&locale=%s\""
+
+                buildConfigField 'int', 'PULSATOR_TIMEOUT', '1000'
+
+                buildConfigField 'int', 'BUY_TOKENS_POLL_RATE', '10000'
+
+                buildConfigField 'int', 'TOKEN_LIMIT', '10'
+
+                buildConfigField 'double', 'REFRESHING_DISTANCE_LIST', '500' // 500m
+                buildConfigField 'double', 'REFRESHING_DISTANCE_MAP', '50000' // 50km
+                buildConfigField 'double', 'REFRESHING_DISTANCE_ITEM', '100' // 100m
+
+                buildConfigField 'int', 'SPLASH_DURATION', '2000'
+            }
+
+            production {
+                versionCode 2971 // odd numbers
+                versionName "2.9.71"
+
+                def productionAddress = "api.ready2wash.net"
+                buildConfigField 'String', 'API_HOST', "\"$productionAddress\""
+                buildConfigField 'String', 'SERVER_URL', "\"https://$productionAddress/api\""
+                buildConfigField 'String', 'TERMS_URL', "\"https://$productionAddress/api/termsAndConditions/document?countryIsoCode=%s&locale=%s\""
+
+                buildConfigField 'int', 'PULSATOR_TIMEOUT', '15000'
+
+                buildConfigField 'int', 'BUY_TOKENS_POLL_RATE', '10000'
+
+                buildConfigField 'int', 'TOKEN_LIMIT', '10'
+
+                buildConfigField 'double', 'REFRESHING_DISTANCE_LIST', '500' // 500m
+                buildConfigField 'double', 'REFRESHING_DISTANCE_MAP', '50000' //50km
+                buildConfigField 'double', 'REFRESHING_DISTANCE_ITEM', '100' // 100m
+
+                buildConfigField 'int', 'SPLASH_DURATION', '2000'
             }
         }
     }
