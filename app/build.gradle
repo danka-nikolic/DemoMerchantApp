@@ -38,30 +38,14 @@ android {
         flavorDimensions "environment"
 
         productFlavors {
-//            development {
-//                buildConfigField "String", "BASE_URL", "\"http://192.168.0.14:8080\""
-//            }
             mirror {
                 // Mirror version code should always be lower by 1 than production
                 versionCode 2970 // even numbers
                 versionName "2.9.70"
 
                 def developmentAddress = "mirrorapi.ready2wash.net"
-                buildConfigField 'String', 'API_HOST', "\"$developmentAddress\""
-                buildConfigField 'String', 'SERVER_URL', "\"https://$developmentAddress/api\""
-                buildConfigField 'String', 'TERMS_URL', "\"https://$developmentAddress/api/termsAndConditions/document?countryIsoCode=%s&locale=%s\""
+                buildConfigField 'String', 'SERVER_URL', "\"https://$developmentAddress/api/\""
 
-                buildConfigField 'int', 'PULSATOR_TIMEOUT', '1000'
-
-                buildConfigField 'int', 'BUY_TOKENS_POLL_RATE', '10000'
-
-                buildConfigField 'int', 'TOKEN_LIMIT', '10'
-
-                buildConfigField 'double', 'REFRESHING_DISTANCE_LIST', '500' // 500m
-                buildConfigField 'double', 'REFRESHING_DISTANCE_MAP', '50000' // 50km
-                buildConfigField 'double', 'REFRESHING_DISTANCE_ITEM', '100' // 100m
-
-                buildConfigField 'int', 'SPLASH_DURATION', '2000'
             }
 
             production {
@@ -69,21 +53,8 @@ android {
                 versionName "2.9.71"
 
                 def productionAddress = "api.ready2wash.net"
-                buildConfigField 'String', 'API_HOST', "\"$productionAddress\""
-                buildConfigField 'String', 'SERVER_URL', "\"https://$productionAddress/api\""
-                buildConfigField 'String', 'TERMS_URL', "\"https://$productionAddress/api/termsAndConditions/document?countryIsoCode=%s&locale=%s\""
+                buildConfigField 'String', 'SERVER_URL', "\"https://$productionAddress/api/\""
 
-                buildConfigField 'int', 'PULSATOR_TIMEOUT', '15000'
-
-                buildConfigField 'int', 'BUY_TOKENS_POLL_RATE', '10000'
-
-                buildConfigField 'int', 'TOKEN_LIMIT', '10'
-
-                buildConfigField 'double', 'REFRESHING_DISTANCE_LIST', '500' // 500m
-                buildConfigField 'double', 'REFRESHING_DISTANCE_MAP', '50000' //50km
-                buildConfigField 'double', 'REFRESHING_DISTANCE_ITEM', '100' // 100m
-
-                buildConfigField 'int', 'SPLASH_DURATION', '2000'
             }
         }
     }
@@ -102,6 +73,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

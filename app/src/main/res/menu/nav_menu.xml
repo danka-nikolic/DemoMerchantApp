@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_daily_turnovers"
+        android:icon="@drawable/ic_daily_turnovers"
+        android:title="Daily turnovers"/>
+
+    <item
+        android:id="@+id/ic_reports"
+        android:icon="@drawable/ic_reports"
+        android:title="Reports"/>
+
+    <item
+        android:id="@+id/ic_devices"
+        android:icon="@drawable/ic_devices"
+        android:title="Devices"/>
+    <item
+        android:id="@+id/ic_alarms"
+        android:icon="@drawable/ic_alarms"
+        android:title="Alarms"/>
+    <item
+        android:id="@+id/ic_issue_local_tokens"
+        android:icon="@drawable/ic_issue_local_tokens"
+        android:title="Issue local tokens"/>
+
+
+</menu>

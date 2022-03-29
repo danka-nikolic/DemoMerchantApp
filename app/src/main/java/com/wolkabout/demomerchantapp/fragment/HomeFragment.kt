@@ -39,28 +39,29 @@ class HomeFragment : Fragment() {
                     data?.list?.forEach {
                         Log.e("TAG", it.name)
                     }
-                    hideProgress()
+//                    hideProgress()
                 }
                 is Result.Loading -> {
-                    showProgress()
+//                    showProgress()
                 }
                 is Result.Error -> {
-                    hideProgress()
+//                    hideProgress()
                     Log.e("TAG", "Error fetching products: ${result.errorMessage}")
                 }
             }
         }
 
-        binding.button.setOnClickListener {
-            viewModel.getProductPage(0, 20)
-        }
-    }
-
-    private fun showProgress() {
-        binding.progressBar.visibility = View.VISIBLE
-    }
-
-    private fun hideProgress() {
-        binding.progressBar.visibility = View.GONE
+//        binding.button.setOnClickListener {
+//            viewModel.getProductPage(0, 20)
+//        }
+//    }
+//
+//    private fun showProgress() {
+//        binding.progressBar.visibility = View.VISIBLE
+//    }
+//
+//    private fun hideProgress() {
+//        binding.progressBar.visibility = View.GONE
+//    }
     }
 }

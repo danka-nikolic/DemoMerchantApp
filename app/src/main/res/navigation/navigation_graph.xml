@@ -28,6 +28,6 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.wolkabout.demomerchantapp.fragment.HomeFragment"
-        android:label="ListFragment"
+        android:label="Home Page"
         tools:layout="@layout/fragment_home" />
 </navigation>
