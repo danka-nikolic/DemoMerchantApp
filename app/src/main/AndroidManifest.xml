@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoMerchantApp.App">
         <activity
-            android:name=".model.HomeActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
