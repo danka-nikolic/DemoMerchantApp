@@ -2,10 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wolkabout.demomerchantapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
-        android:name="com.wolkabout.demomerchantapp.App"
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoMerchantApp.App">
         <activity
-            android:name="com.wolkabout.demomerchantapp.MainActivity"
+            android:name=".model.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,5 +23,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
