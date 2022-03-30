@@ -1,9 +1,8 @@
-package com.wolkabout.demomerchantapp.model
+package com.wolkabout.demomerchantapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.wolkabout.demomerchantapp.R
 import com.wolkabout.demomerchantapp.databinding.ActivityHomeBinding
 import com.wolkabout.demomerchantapp.fragment.*
 
@@ -26,11 +25,26 @@ class HomeActivity : AppCompatActivity() {
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.ic_daily_turnovers -> replaceFragment(dailyTurnoversFragment)
-                R.id.ic_reports -> replaceFragment(reportsFragment)
-                R.id.ic_devices -> replaceFragment(devicesFragment)
-                R.id.ic_alarms -> replaceFragment(alarmsFragment)
-                R.id.ic_issue_local_tokens -> replaceFragment(issueLocalTokensFragment)
+                R.id.ic_daily_turnovers -> {
+                    replaceFragment(dailyTurnoversFragment)
+                    binding.toolbar.title = "Daily turnovers"
+                }
+                R.id.ic_reports -> {
+                    replaceFragment(reportsFragment)
+                    binding.toolbar.title = "Reports"
+                }
+                R.id.ic_devices -> {
+                    replaceFragment(devicesFragment)
+                    binding.toolbar.title = "Devices"
+                }
+                R.id.ic_alarms -> {
+                    replaceFragment(alarmsFragment)
+                    binding.toolbar.title = "Alarms"
+                }
+                R.id.ic_issue_local_tokens -> {
+                    replaceFragment(issueLocalTokensFragment)
+                    binding.toolbar.title = "Issue local tokens"
+                }
             }
             true
         }
