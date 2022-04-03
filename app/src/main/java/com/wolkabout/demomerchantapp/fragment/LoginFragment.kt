@@ -2,17 +2,23 @@ package com.wolkabout.demomerchantapp.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.wolkabout.demomerchantapp.databinding.FragmentLoginBinding
 import com.wolkabout.demomerchantapp.HomeActivity
+import com.wolkabout.demomerchantapp.MainViewModel
+import com.wolkabout.demomerchantapp.model.Result
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,19 +49,30 @@ class LoginFragment : Fragment() {
                 return@setOnClickListener
             }
 
+            login(email, password)
+
             if (email == "demo@wolkabout.com" && password == "Test12345") {
                 requireActivity().run {
                     startActivity(Intent(this, HomeActivity::class.java))
                     finish()
                 }
             } else {
-                binding.loginButton.error = "Incorrect credentials! Please try again."
+//                binding.loginButton.error = "Incorrect credentials! Please try again."
+                requireActivity().run {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    finish()
+                }
             }
 
 //            val actionMainFragmentToListFragment = LoginFragmentDirections.actionLoginFragmentToHomeFragment("rs")
 //            findNavController().navigate(actionMainFragmentToListFragment)
         }
     }
+
+    private fun login(username: String, password: String) {
+        viewModel.getLoginData(username, password)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
