@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.wolkabout.demomerchantapp.activity.HomeActivity
-import com.wolkabout.demomerchantapp.viewmodel.MainViewModel
 import com.wolkabout.demomerchantapp.databinding.FragmentLoginBinding
+import com.wolkabout.demomerchantapp.viewmodel.LoginViewModel
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MainViewModel by activityViewModels()
+    private val viewModel: LoginViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
