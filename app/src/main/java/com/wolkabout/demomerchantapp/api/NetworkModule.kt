@@ -1,6 +1,7 @@
 package com.wolkabout.demomerchantapp.api
 
 import com.wolkabout.demomerchantapp.BuildConfig
+import com.wolkabout.demomerchantapp.api.login.LoginApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

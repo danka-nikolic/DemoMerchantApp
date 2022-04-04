@@ -1,4 +1,4 @@
-package com.wolkabout.demomerchantapp.model
+package com.wolkabout.demomerchantapp.model.login
 
 data class User(
     val id: Int,

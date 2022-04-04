@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.wolkabout.demomerchantapp.HomeActivity
-import com.wolkabout.demomerchantapp.MainViewModel
+import com.wolkabout.demomerchantapp.activity.HomeActivity
+import com.wolkabout.demomerchantapp.viewmodel.MainViewModel
 import com.wolkabout.demomerchantapp.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {

@@ -1,7 +1,7 @@
-package com.wolkabout.demomerchantapp.api
+package com.wolkabout.demomerchantapp.api.login
 
-import com.wolkabout.demomerchantapp.model.LoginRequest
-import com.wolkabout.demomerchantapp.model.LoginResponse
+import com.wolkabout.demomerchantapp.model.login.LoginRequest
+import com.wolkabout.demomerchantapp.model.login.LoginResponse
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
