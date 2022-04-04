@@ -1,14 +1,17 @@
-package com.wolkabout.demomerchantapp
+package com.wolkabout.demomerchantapp.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import com.wolkabout.demomerchantapp.R
 import com.wolkabout.demomerchantapp.databinding.ActivityHomeBinding
 import com.wolkabout.demomerchantapp.fragment.*
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+//    private lateinit var navController: NavController
 
     private val dailyTurnoversFragment = DailyTurnoversFragment()
     private val reportsFragment = ReportsFragment()
@@ -18,12 +21,25 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityHomeBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(R.layout.activity_home)
+        setContentView(view)
+//
+//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navigationHost) as NavHostFragment
+//        navController = navHostFragment.navController
+//
+//        setSupportActionBar(binding.toolbar)
+//        setupActionBarWithNavController(navController)
+//    }
+
+//    override fun onSupportNavigateUp(): Boolean {
+//        return navController.navigateUp() || super.onSupportNavigateUp()
+//    }
+
         replaceFragment(dailyTurnoversFragment)
 
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+        binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.ic_daily_turnovers -> {
                     replaceFragment(dailyTurnoversFragment)
@@ -46,7 +62,7 @@ class HomeActivity : AppCompatActivity() {
                     binding.toolbar.title = "Issue local tokens"
                 }
             }
-            true
+            return@setOnItemSelectedListener true
         }
     }
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_menu"
+    app:startDestination="@id/ic_daily_turnovers">
+
+    <fragment
+        android:id="@+id/ic_daily_turnovers"
+        android:name="com.wolkabout.demomerchantapp.fragment.DailyTurnoversFragment"
+        android:label="fragment_daily_turnovers"
+        tools:layout="@layout/fragment_daily_turnovers" >
+        <action
+            android:id="@+id/action_dailyTurnoversFragment_to_reportsFragment"
+            app:destination="@id/ic_reports" />
+    </fragment>
+    <fragment
+        android:id="@+id/ic_reports"
+        android:name="com.wolkabout.demomerchantapp.fragment.ReportsFragment"
+        android:label="fragment_reports"
+        tools:layout="@layout/fragment_reports" >
+        <action
+            android:id="@+id/action_reportsFragment_to_devicesFragment"
+            app:destination="@id/ic_devices" />
+    </fragment>
+    <fragment
+        android:id="@+id/ic_devices"
+        android:name="com.wolkabout.demomerchantapp.fragment.DevicesFragment"
+        android:label="fragment_devices"
+        tools:layout="@layout/fragment_devices" >
+        <action
+            android:id="@+id/action_devicesFragment_to_alarmsFragment"
+            app:destination="@id/ic_alarms" />
+    </fragment>
+    <fragment
+        android:id="@+id/ic_alarms"
+        android:name="com.wolkabout.demomerchantapp.fragment.AlarmsFragment"
+        android:label="fragment_alarms"
+        tools:layout="@layout/fragment_alarms" >
+        <action
+            android:id="@+id/action_alarmsFragment_to_issueLocalTokensFragment"
+            app:destination="@id/ic_issue_local_tokens" />
+    </fragment>
+    <fragment
+        android:id="@+id/ic_issue_local_tokens"
+        android:name="com.wolkabout.demomerchantapp.fragment.IssueLocalTokensFragment"
+        android:label="fragment_issue_local_tokens"
+        tools:layout="@layout/fragment_issue_local_tokens" />
+</navigation>
