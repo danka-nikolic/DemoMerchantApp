@@ -7,7 +7,7 @@ import retrofit2.http.Headers
 
 interface DailyTurnoverApi {
 
-    @Headers("application/vnd.dailyturnover.v2+json")
+    @Headers("Accept: application/vnd.dailyturnover.v2+json")
     @GET("periodicReports/dailyTurnover")
-    fun getDailyTurnoverList(): Single<List<DailyTurnoverResponse>>
+    fun getDailyTurnover(): Single<DailyTurnoverResponse>
 }

@@ -9,8 +9,8 @@ import javax.inject.Inject
 
 class DailyTurnoverRepository @Inject internal constructor(private val dailyTurnoverApi: DailyTurnoverApi){
 
-    fun getDailyTurnoverList(): Single<List<DailyTurnoverResponse>> {
-        return dailyTurnoverApi.getDailyTurnoverList()
+    fun getDailyTurnover(): Single<DailyTurnoverResponse> {
+        return dailyTurnoverApi.getDailyTurnover()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .timeout(10, TimeUnit.SECONDS)

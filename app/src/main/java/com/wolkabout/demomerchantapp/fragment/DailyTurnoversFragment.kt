@@ -1,60 +1,58 @@
 package com.wolkabout.demomerchantapp.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.wolkabout.demomerchantapp.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import com.wolkabout.demomerchantapp.databinding.FragmentDailyTurnoversBinding
+import com.wolkabout.demomerchantapp.viewmodel.DailyTurnoverViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DailyTurnoversFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class DailyTurnoversFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentDailyTurnoversBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: DailyTurnoverViewModel by activityViewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_daily_turnovers, container, false)
+        _binding = FragmentDailyTurnoversBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DailyTurnoversFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DailyTurnoversFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getDailyTurnoverData()
+
+//        viewModel.dailyTurnoverLiveData.observe(viewLifecycleOwner) { result ->
+//            when (result) {
+//                is Result.Success -> {
+//                    val data = result.data
+//                    data?.facilities?.forEach {
+//                        Log.d("######", it.facilityName)
+//                    }
+//                }
+//                is Result.Loading -> {
+//                }
+//                is Result.Error -> {
+//                    Log.e("TAG", "Error fetching products: ${result.errorMessage}")
+//                }
+//            }
+//        }
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

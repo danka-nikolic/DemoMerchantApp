@@ -1,6 +1,7 @@
 package com.wolkabout.demomerchantapp.api
 
 import com.wolkabout.demomerchantapp.BuildConfig
+import com.wolkabout.demomerchantapp.api.dailyTurnovers.DailyTurnoverApi
 import com.wolkabout.demomerchantapp.api.login.LoginApi
 import dagger.Module
 import dagger.Provides
@@ -52,4 +53,8 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideLoginApi(retrofit: Retrofit): LoginApi = retrofit.create(LoginApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideDailyTurnoverApi(retrofit: Retrofit): DailyTurnoverApi = retrofit.create(DailyTurnoverApi::class.java)
 }

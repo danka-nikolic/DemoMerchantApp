@@ -7,7 +7,9 @@ import androidx.navigation.NavController
 import com.wolkabout.demomerchantapp.R
 import com.wolkabout.demomerchantapp.databinding.ActivityHomeBinding
 import com.wolkabout.demomerchantapp.fragment.*
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
