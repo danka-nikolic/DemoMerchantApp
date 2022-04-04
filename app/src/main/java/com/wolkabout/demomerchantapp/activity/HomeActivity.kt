@@ -38,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
 //    }
 
         replaceFragment(dailyTurnoversFragment)
+        binding.toolbar.title = "Daily turnovers"
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
