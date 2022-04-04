@@ -1,4 +1,4 @@
-package com.wolkabout.demomerchantapp
+package com.wolkabout.demomerchantapp.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.wolkabout.demomerchantapp.viewmodel.MainViewModel
+import com.wolkabout.demomerchantapp.R
 import com.wolkabout.demomerchantapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
