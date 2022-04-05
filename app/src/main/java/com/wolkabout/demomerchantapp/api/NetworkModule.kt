@@ -1,8 +1,12 @@
 package com.wolkabout.demomerchantapp.api
 
 import com.wolkabout.demomerchantapp.BuildConfig
+import com.wolkabout.demomerchantapp.api.alarms.AlarmApi
 import com.wolkabout.demomerchantapp.api.dailyTurnovers.DailyTurnoverApi
+import com.wolkabout.demomerchantapp.api.devices.DeviceApi
+import com.wolkabout.demomerchantapp.api.issueLocalTokens.IssueLocalTokensApi
 import com.wolkabout.demomerchantapp.api.login.LoginApi
+import com.wolkabout.demomerchantapp.api.reports.ReportApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -57,4 +61,20 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideDailyTurnoverApi(retrofit: Retrofit): DailyTurnoverApi = retrofit.create(DailyTurnoverApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideAlarmApi(retrofit: Retrofit): AlarmApi = retrofit.create(AlarmApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideDeviceApi(retrofit: Retrofit): DeviceApi = retrofit.create(DeviceApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideReportApi(retrofit: Retrofit): ReportApi = retrofit.create(ReportApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideIssueLocalTokensApi(retrofit: Retrofit): IssueLocalTokensApi = retrofit.create(IssueLocalTokensApi::class.java)
 }
