@@ -10,7 +10,9 @@ import androidx.fragment.app.activityViewModels
 import com.wolkabout.demomerchantapp.activity.HomeActivity
 import com.wolkabout.demomerchantapp.databinding.FragmentLoginBinding
 import com.wolkabout.demomerchantapp.viewmodel.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
